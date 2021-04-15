@@ -59,3 +59,13 @@ Here's an example of what breadcrumbs might look like, as well as a code example
     {{ /nav:breadcrumbs }}
 </ul>
 ```
+
+## How it works
+
+The list of breadcrumbs is derived from the relative URL of the current page (and not, for example,
+the current page's list of parents in a navigation or structured collection). Each prefix of the list of
+path parts of the page's URL corresponds to a breadcrumb, with `/` prepended unless the `include_home` parameter is `false`. So, the URL of
+the page in the above example might be `/blog/how-to-dress-like-david-hasselhoff`; in that case, its
+breadcrumbs would be the entries with these URLs: `/`, `/blog`, `/blog/how-to-dress-like-hasselhoff`.
+If you want the URL of an entry to correspond to its location in a structured collection, you can use
+the `parent_uri` variable in its collection's [route setting](https://statamic.dev/collections#routing).
